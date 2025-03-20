@@ -10,10 +10,19 @@
 
 #include <JuceHeader.h>
 
+enum Slope
+{
+    Slope_12,
+    Slope_24,
+    Slope_36,
+    Slope_48
+};
+
+
 struct ChainSettings
 {
     float peakFreq{ 0 }, peakGainInDecibels{ 0 }, peakQuality{ 0 };
-    float lowCutFreq{ 0 }, highCutFreq{ 0 };
+    float lowCutFreq{ Slope::Slope_12 }, highCutFreq{ Slope::Slope_12 };
     int lowCutSlope{ 0 }, highCutSlope{ 0 };
 };
 
